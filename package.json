@@ -1,9 +1,9 @@
 {
   "name": "report-builder",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Complex JSON reports made easy",
   "publishConfig": {
-    "registry":"https://registry.npmjs.org/"
+    "registry": "https://registry.npmjs.org/"
   },
   "main": "src/index.js",
   "scripts": {
