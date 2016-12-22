@@ -1,0 +1,31 @@
+{
+  "name": "report-builder",
+  "version": "1.0.0",
+  "description": "Complex JSON reports made easy",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/danielo515/report-builder.git"
+  },
+  "keywords": [
+    "report",
+    "builder",
+    "helper"
+  ],
+  "author": "Danielo Rodriguez Rivero",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/danielo515/report-builder/issues"
+  },
+  "homepage": "https://github.com/danielo515/report-builder#readme",
+  "dependencies": {
+    "object-path": "^0.11.3"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-jsdoc3": "^1.0.1"
+  }
+}
