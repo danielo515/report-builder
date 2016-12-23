@@ -8,7 +8,8 @@
   "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "document":"jsdoc -d ./gh-pages -r ./src"
+    "document":"jsdoc -d ./gh-pages -r ./src",
+    "publish-docs":"cd ./gh-pages && git add . && git commit -m \"Generated documentation\" && git push && echo Docs published"
   },
   "repository": {
     "type": "git",

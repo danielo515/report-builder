@@ -23,8 +23,18 @@ const getOrDefault = (o, path, def) => {
     return Op.get(o, path);
 };
 
+
 class Report {
 
+    /**
+     * Creates an instance of Report.
+     * 
+     * @param {any} notes
+     * @param {any} totalLabel
+     * @param {any} [timestamp=Date.now()]
+     * 
+     * @memberOf Report
+     */
     constructor(notes, totalLabel, timestamp = Date.now()) {
 
         this.report = {
@@ -40,16 +50,40 @@ class Report {
         };
     }
 
+    /**
+     * 
+     * 
+     * @param {any} name
+     * @returns a new Section under name
+     * 
+     * @memberOf Report
+     */
     section(name) {
 
         return new Section(getOrDefault(this.report, name, {}), this.report);
     }
 
+    /**
+     * 
+     * 
+     * @param {any} value
+     * 
+     * @memberOf Report
+     */
     setTotal(value) {
 
         this.report.summary.total.count = value;
     }
 
+    /**
+     * 
+     * 
+     * @param {any} path
+     * @param {any} totalRef
+     * @returns this
+     * 
+     * @memberOf Report
+     */
     calcPercentOf(path, totalRef) {
 
         if (typeof totalRef !== 'string') {
@@ -67,6 +101,13 @@ class Report {
         return this;
     }
 
+    /**
+     * 
+     * 
+     * @returns internal report
+     * 
+     * @memberOf Report
+     */
     toJSON() {
 
         return this.report;
@@ -75,12 +116,27 @@ class Report {
 
 class Section {
 
+    /**
+     * Creates an instance of Section.
+     * 
+     * @param {any} store
+     * @param {any} reportTree
+     * 
+     * @memberOf Section
+     */
     constructor(store, reportTree) {
 
         this.tree = reportTree;
         this.store = store;
     }
 
+    /**
+     * 
+     * 
+     * @returns internal report
+     * 
+     * @memberOf Section
+     */
     toJSON(){
 
         return this.tree;
@@ -88,21 +144,51 @@ class Section {
 
 
     /** Legacy method from v1.0.0 Will be removed soon */
+    /**
+     * 
+     * 
+     * @returns new Section under name
+     * 
+     * @memberOf Section
+     */
     subSection(){
         return this.section(...arguments);
     }
 
+    /**
+     * 
+     * 
+     * @param {any} name
+     * @returns new Section under name
+     * 
+     * @memberOf Section
+     */
     section(name) {
 
         return new Section(getOrDefault(this.store, name, {}), this.tree);
     }
 
+    /**
+     * 
+     * 
+     * @returns summary Section
+     * 
+     * @memberOf Section
+     */
     summary(){
 
         return new Section(this.tree.summary, this.tree);        
     }
     
 
+    /**
+     * 
+     * 
+     * @param {any} totalRef
+     * @returns this
+     * 
+     * @memberOf Section
+     */
     calcPercent( totalRef ){
 
         if(typeof this.store.count !== 'number'){
@@ -116,6 +202,15 @@ class Section {
         return this;
     }
 
+    /**
+     * 
+     * 
+     * @param {any} path
+     * @param {any} value
+     * @returns this
+     * 
+     * @memberOf Section
+     */
     set(path, value) {
 
         if (!path || !value) {
@@ -125,6 +220,15 @@ class Section {
         return this;
     }
 
+    /**
+     * 
+     * 
+     * @param {any} path
+     * @param {number} [value=1]
+     * @returns this
+     * 
+     * @memberOf Section
+     */
     increment(path, value = 1) {
 
         if (typeof path === 'number') {
