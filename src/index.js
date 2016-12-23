@@ -28,7 +28,7 @@ class Report {
 
     section(name) {
 
-        return new Section(getOrDefault(this.report, name, {}));
+        return new Section(getOrDefault(this.report, name, {}), this.report);
     }
 
     setTotal(value) {
@@ -61,14 +61,38 @@ class Report {
 
 class Section {
 
-    constructor(store) {
+    constructor(store, reportTree) {
 
+        this.tree = reportTree;
         this.store = store;
     }
 
-    subSection(name) {
+    toJSON(){
 
-        return new Section(getOrDefault(this.store, name, {}));
+        return this.tree;
+    }
+
+    summary(){
+
+        return new Section(this.tree.summary, this.tree);        
+    }
+
+    section(name) {
+
+        return new Section(getOrDefault(this.store, name, {}), this.tree);
+    }
+
+    calcPercent( totalRef ){
+
+        if(typeof this.store.count !== 'number'){
+            return this;
+        }
+        const count = this.store.count;
+        const total = typeof totalRef !== 'string' 
+                    ? this.tree.summary.total.count
+                    : Op.get(this.tree, totalRef);
+        this.store.percent = (count * 100) / total;
+        return this;
     }
 
     set(path, value) {
