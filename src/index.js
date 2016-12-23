@@ -7,6 +7,8 @@ const Op = require('object-path');
  * using the default value.
  * Object-path.get with default option 
  * does not sets the default value on the target path.
+ * @module  utils
+ * @private 
  * @param {Object} o The object containing the path
  * @param {String|Array} path a path to the target property inside the object
  * @param {any} def The default value to be used if the target does not exist. 
