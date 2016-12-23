@@ -1,6 +1,18 @@
 'use strict';
 const Op = require('object-path');
 
+/**
+ * Helper method that actually creates 
+ * the target if it does not exist 
+ * using the default value.
+ * Object-path.get with default option 
+ * does not sets the default value on the target path.
+ * @param {Object} o The object containing the path
+ * @param {String|Array} path a path to the target property inside the object
+ * @param {any} def The default value to be used if the target does not exist. 
+ *                  This value will be saved at the provided path inside the provided object
+ * @return {any} The value at the provided path.
+ */
 const getOrDefault = (o, path, def) => {
 
     if (!Op.get(o, path)) {
@@ -39,7 +51,7 @@ class Report {
     calcPercentOf(path, totalRef) {
 
         if (typeof totalRef !== 'string') {
-            totalRef = 'summary.total.count'; // default reference is on summary
+            totalRef = 'summary.total.count'; // default reference is inside summary
         } else {
             totalRef = ['results', totalRef, 'count'].join('.'); // any other ref is under results namespace
         }
@@ -72,15 +84,22 @@ class Section {
         return this.tree;
     }
 
-    summary(){
 
-        return new Section(this.tree.summary, this.tree);        
+    /** Legacy method from v1.0.0 Will be removed soon */
+    subSection(){
+        return this.section(...arguments);
     }
 
     section(name) {
 
         return new Section(getOrDefault(this.store, name, {}), this.tree);
     }
+
+    summary(){
+
+        return new Section(this.tree.summary, this.tree);        
+    }
+    
 
     calcPercent( totalRef ){
 

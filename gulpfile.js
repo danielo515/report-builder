@@ -9,7 +9,7 @@ var outPath = {
 
 // adapt this to your source code location
 var jsDocInput = {
-    src: "src",
+    src: "./src",
     readme: "./README.md",
     jsDoc: "./jsdoc/config"
 };
