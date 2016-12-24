@@ -35,7 +35,7 @@ class Report {
      * 
      * 
      * @param {string} name
-     * @returns a new Section under name
+     * @returns a new {@link Section} under that name
      * 
      */
     section(name) {
@@ -92,13 +92,14 @@ class Report {
 }
 
 /**
- * Class that represents a section of the main report
- * 
+ * Class that represents a section of the main report.
+ * **You should not try to instantiate it directly**.
  */
 class Section {
 
     /**
      * Creates an instance of Section.
+     * This constructor should only be called by the {@link Report} class
      * 
      * @param {any} store
      * @param {any} reportTree

@@ -22,6 +22,6 @@
     },
     "opts": {
       "encoding": "utf8",
-      "private": true
+      "private": false
     }
 }
