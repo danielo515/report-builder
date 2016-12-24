@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-	<title>report-builder Global</title>
+	<title>report-builder Module: Report</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -31,9 +31,16 @@
 		<ul class="nav navbar-nav">
 			
 			<li class="dropdown">
+				<a href="modules.list.html" class="dropdown-toggle" data-toggle="dropdown">Modules<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="module-Report.html">Report</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
 				<a href="classes.list.html" class="dropdown-toggle" data-toggle="dropdown">Classes<b class="caret"></b></a>
 				<ul class="dropdown-menu ">
-					<li><a href="Report.html">Report</a></li><li><a href="Section.html">Section</a></li>
+					<li><a href="module-Report-Report.Report.html">Report~Report.Report</a></li><li><a href="module-Report-Section.Section.html">Report~Section.Section</a></li>
 				</ul>
 			</li>
 			
@@ -72,15 +79,10 @@
 		<div id="main">
 			
 
-	<h1 class="page-title">Global</h1>
+	<h1 class="page-title">Module: Report</h1>
 <section>
 
 <header>
-    
-        <h2>
-        
-        </h2>
-        
     
 </header>
 
@@ -89,200 +91,10 @@
     <div class="container-overview">
     
         
-
-        
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-        
-    
-    </div>
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-        <h3 class="subsection-title">Methods</h3>
-
-        <dl>
-            
-<hr>
-<dt>
-    <h4 class="name" id="getOrDefault"><span class="type-signature">&lt;private> </span>getOrDefault(o, path, def)</h4>
-    
-    
-    <p class="summary"><p>Helper method that actually creates 
-the target if it does not exist 
-using the default value.</p></p>
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <p>Helper method that actually creates 
-the target if it does not exist 
-using the default value.
-Object-path.get with default option 
-does not sets the default value on the target path.</p>
-    </div>
-    
-
-    
-
-    
-
-    
-    
-        <h5>Parameters:</h5>
-        
-
-<table class="params table table-striped">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
+            <div class="description"><p>Represents the report that we are generating</p></div>
         
 
         
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>o</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>The object containing the path</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>path</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">String</span>
-|
-
-<span class="param-type">Array</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>a path to the target property inside the object</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>def</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">any</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>The default value to be used if the target does not exist. 
-                 This value will be saved at the provided path inside the provided object</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-    
-
-    
 <dl class="details">
     
 
@@ -317,8 +129,8 @@ does not sets the default value on the target path.</p>
 	<dd class="tag-source">
 		<ul class="dummy">
 			<li>
-				<a href="utils.js.html">utils.js</a>,
-				 <a href="utils.js.html#sunlight-1-line-17">line 17</a>
+				<a href="index.js.html">index.js</a>,
+				 <a href="index.js.html#sunlight-1-line-5">line 5</a>
 			</li>
 		</ul>
 	</dd>
@@ -332,46 +144,115 @@ does not sets the default value on the target path.</p>
 </dl>
 
 
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <h5>Returns:</h5>
-    
-            
-<div class="param-desc">
-    <p>The value at the provided path.</p>
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
         
-<span class="param-type">any</span>
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
 
 
 
-    </dd>
+
+	<h1 class="page-title">Module: Report</h1>
+<section>
+
+<header>
+    
+</header>
+
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description"><p>Class that represents a section of the main report</p></div>
+        
+
+        
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dd class="tag-source">
+		<ul class="dummy">
+			<li>
+				<a href="index.js.html">index.js</a>,
+				 <a href="index.js.html#sunlight-1-line-95">line 95</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
 </dl>
 
 
         
+    
+    </div>
 
     
-</dd>
 
-        </dl>
+    
+
+    
+
+    
+
+    
+
+    
+
     
 
     
@@ -427,7 +308,7 @@ does not sets the default value on the target path.</p>
 <span class="jsdoc-message">
 	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a>
 	
-		on 2016-12-24T19:56:49+01:00
+		on 2016-12-24T19:55:51+01:00
 	
 	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
 </span>

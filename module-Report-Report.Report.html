@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-	<title>report-builder Global</title>
+	<title>report-builder Class: Report</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -31,9 +31,16 @@
 		<ul class="nav navbar-nav">
 			
 			<li class="dropdown">
+				<a href="modules.list.html" class="dropdown-toggle" data-toggle="dropdown">Modules<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="module-Report.html">Report</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
 				<a href="classes.list.html" class="dropdown-toggle" data-toggle="dropdown">Classes<b class="caret"></b></a>
 				<ul class="dropdown-menu ">
-					<li><a href="Report.html">Report</a></li><li><a href="Section.html">Section</a></li>
+					<li><a href="module-Report-Report.Report.html">Report~Report.Report</a></li><li><a href="module-Report-Section.Section.html">Report~Section.Section</a></li>
 				</ul>
 			</li>
 			
@@ -72,13 +79,13 @@
 		<div id="main">
 			
 
-	<h1 class="page-title">Global</h1>
+	<h1 class="page-title">Class: Report</h1>
 <section>
 
 <header>
     
         <h2>
-        
+        Report
         </h2>
         
     
@@ -89,87 +96,19 @@
     <div class="container-overview">
     
         
-
-        
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-        
-    
-    </div>
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-        <h3 class="subsection-title">Methods</h3>
-
-        <dl>
-            
 <hr>
 <dt>
-    <h4 class="name" id="getOrDefault"><span class="type-signature">&lt;private> </span>getOrDefault(o, path, def)</h4>
+    <h4 class="name" id="Report"><span class="type-signature"></span>new Report(notes, totalLabel [, timestamp])</h4>
     
     
-    <p class="summary"><p>Helper method that actually creates 
-the target if it does not exist 
-using the default value.</p></p>
+    <p class="summary">Creates an instance of Report.</p>
     
 </dt>
 <dd>
 
     
     <div class="description">
-        <p>Helper method that actually creates 
-the target if it does not exist 
-using the default value.
-Object-path.get with default option 
-does not sets the default value on the target path.</p>
+        <p>Creates an instance of Report.</p>
     </div>
     
 
@@ -192,7 +131,11 @@ does not sets the default value on the target path.</p>
         <th>Type</th>
 
         
+        <th>Argument</th>
+        
 
+        
+        <th>Default</th>
         
 
         <th class="last">Description</th>
@@ -204,58 +147,7 @@ does not sets the default value on the target path.</p>
 
         <tr>
             
-                <td class="name"><code>o</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>The object containing the path</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>path</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">String</span>
-|
-
-<span class="param-type">Array</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>a path to the target property inside the object</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>def</code></td>
+                <td class="name"><code>notes</code></td>
             
 
             <td class="type">
@@ -269,11 +161,98 @@ does not sets the default value on the target path.</p>
             </td>
 
             
+                <td class="attributes">
+                
 
+                
+
+                
+                </td>
             
 
-            <td class="description last"><p>The default value to be used if the target does not exist. 
-                 This value will be saved at the provided path inside the provided object</p></td>
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>totalLabel</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">any</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>timestamp</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">any</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    Date.now()
+                
+                </td>
+            
+
+            <td class="description last"></td>
         </tr>
 
     
@@ -317,8 +296,8 @@ does not sets the default value on the target path.</p>
 	<dd class="tag-source">
 		<ul class="dummy">
 			<li>
-				<a href="utils.js.html">utils.js</a>,
-				 <a href="utils.js.html#sunlight-1-line-17">line 17</a>
+				<a href="index.js.html">index.js</a>,
+				 <a href="index.js.html#sunlight-1-line-20">line 20</a>
 			</li>
 		</ul>
 	</dd>
@@ -343,35 +322,25 @@ does not sets the default value on the target path.</p>
     
 
     
-    <h5>Returns:</h5>
-    
-            
-<div class="param-desc">
-    <p>The value at the provided path.</p>
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">any</span>
-
-
-
-    </dd>
-</dl>
-
-
-        
 
     
 </dd>
 
-        </dl>
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
     
 
     
@@ -427,7 +396,7 @@ does not sets the default value on the target path.</p>
 <span class="jsdoc-message">
 	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a>
 	
-		on 2016-12-24T19:56:49+01:00
+		on 2016-12-24T19:55:52+01:00
 	
 	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
 </span>

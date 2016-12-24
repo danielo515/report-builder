@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-	<title>report-builder Global</title>
+	<title>report-builder Class: Report</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -37,13 +37,6 @@
 				</ul>
 			</li>
 			
-			<li class="dropdown">
-				<a href="global.html" class="dropdown-toggle" data-toggle="dropdown">Global<b class="caret"></b></a>
-				<ul class="dropdown-menu ">
-					<li><a href="global.html#getOrDefault">getOrDefault</a></li>
-				</ul>
-			</li>
-			
 		</ul>
         
             <div class="col-sm-3 col-md-3">
@@ -72,14 +65,16 @@
 		<div id="main">
 			
 
-	<h1 class="page-title">Global</h1>
+	<h1 class="page-title">Class: Report</h1>
 <section>
 
 <header>
     
         <h2>
-        
+        Report
         </h2>
+        
+            <div class="class-description"><p>Represents the report that we are generating</p></div>
         
     
 </header>
@@ -89,87 +84,17 @@
     <div class="container-overview">
     
         
-
-        
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-        
-    
-    </div>
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-        <h3 class="subsection-title">Methods</h3>
-
-        <dl>
-            
 <hr>
 <dt>
-    <h4 class="name" id="getOrDefault"><span class="type-signature">&lt;private> </span>getOrDefault(o, path, def)</h4>
+    <h4 class="name" id="Report"><span class="type-signature"></span>new Report(notes, totalLabel [, timestamp])</h4>
     
-    
-    <p class="summary"><p>Helper method that actually creates 
-the target if it does not exist 
-using the default value.</p></p>
     
 </dt>
 <dd>
 
     
     <div class="description">
-        <p>Helper method that actually creates 
-the target if it does not exist 
-using the default value.
-Object-path.get with default option 
-does not sets the default value on the target path.</p>
+        <p>Creates an instance of Report.</p>
     </div>
     
 
@@ -192,7 +117,11 @@ does not sets the default value on the target path.</p>
         <th>Type</th>
 
         
+        <th>Argument</th>
+        
 
+        
+        <th>Default</th>
         
 
         <th class="last">Description</th>
@@ -204,13 +133,13 @@ does not sets the default value on the target path.</p>
 
         <tr>
             
-                <td class="name"><code>o</code></td>
+                <td class="name"><code>notes</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">Object</span>
+<span class="param-type">string</span>
 
 
 
@@ -218,26 +147,35 @@ does not sets the default value on the target path.</p>
             </td>
 
             
+                <td class="attributes">
+                
 
+                
+
+                
+                </td>
             
 
-            <td class="description last"><p>The object containing the path</p></td>
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"></td>
         </tr>
 
     
 
         <tr>
             
-                <td class="name"><code>path</code></td>
+                <td class="name"><code>totalLabel</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">String</span>
-|
-
-<span class="param-type">Array</span>
+<span class="param-type">string</span>
 
 
 
@@ -245,17 +183,29 @@ does not sets the default value on the target path.</p>
             </td>
 
             
+                <td class="attributes">
+                
 
+                
+
+                
+                </td>
             
 
-            <td class="description last"><p>a path to the target property inside the object</p></td>
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"></td>
         </tr>
 
     
 
         <tr>
             
-                <td class="name"><code>def</code></td>
+                <td class="name"><code>timestamp</code></td>
             
 
             <td class="type">
@@ -269,11 +219,26 @@ does not sets the default value on the target path.</p>
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
 
+                
+
+                
+                </td>
             
 
-            <td class="description last"><p>The default value to be used if the target does not exist. 
-                 This value will be saved at the provided path inside the provided object</p></td>
+            
+                <td class="default">
+                
+                    Date.now()
+                
+                </td>
+            
+
+            <td class="description last"></td>
         </tr>
 
     
@@ -317,8 +282,184 @@ does not sets the default value on the target path.</p>
 	<dd class="tag-source">
 		<ul class="dummy">
 			<li>
-				<a href="utils.js.html">utils.js</a>,
-				 <a href="utils.js.html#sunlight-1-line-17">line 17</a>
+				<a href="index.js.html">index.js</a>,
+				 <a href="index.js.html#sunlight-1-line-9">line 9</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        <dl>
+            
+<hr>
+<dt>
+    <h4 class="name" id="calcPercentOf"><span class="type-signature"></span>calcPercentOf(path, totalRef)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>path</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>totalRef</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dd class="tag-source">
+		<ul class="dummy">
+			<li>
+				<a href="index.js.html">index.js</a>,
+				 <a href="index.js.html#sunlight-1-line-65">line 65</a>
 			</li>
 		</ul>
 	</dd>
@@ -347,23 +488,384 @@ does not sets the default value on the target path.</p>
     
             
 <div class="param-desc">
-    <p>The value at the provided path.</p>
+    <p>this</p>
 </div>
 
 
 
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
+
         
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="section"><span class="type-signature"></span>section(name)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>name</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dd class="tag-source">
+		<ul class="dummy">
+			<li>
+				<a href="index.js.html">index.js</a>,
+				 <a href="index.js.html#sunlight-1-line-41">line 41</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    <p>a new <a href="Section.html">Section</a> under that name</p>
+</div>
+
+
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="setTotal"><span class="type-signature"></span>setTotal(value)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>value</code></td>
+            
+
+            <td class="type">
+            
+                
 <span class="param-type">any</span>
 
 
 
-    </dd>
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dd class="tag-source">
+		<ul class="dummy">
+			<li>
+				<a href="index.js.html">index.js</a>,
+				 <a href="index.js.html#sunlight-1-line-52">line 52</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
 </dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="toJSON"><span class="type-signature"></span>toJSON()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dd class="tag-source">
+		<ul class="dummy">
+			<li>
+				<a href="index.js.html">index.js</a>,
+				 <a href="index.js.html#sunlight-1-line-88">line 88</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    <p>internal report</p>
+</div>
+
+
 
 
         
@@ -427,7 +929,7 @@ does not sets the default value on the target path.</p>
 <span class="jsdoc-message">
 	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a>
 	
-		on 2016-12-24T19:56:49+01:00
+		on 2016-12-24T20:06:41+01:00
 	
 	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
 </span>
