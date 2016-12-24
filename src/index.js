@@ -23,7 +23,10 @@ const getOrDefault = (o, path, def) => {
     return Op.get(o, path);
 };
 
-
+/**
+ * Represents the report that we are generating
+ * 
+*/
 class Report {
 
     /**
@@ -33,7 +36,6 @@ class Report {
      * @param {any} totalLabel
      * @param {any} [timestamp=Date.now()]
      * 
-     * @memberOf Report
      */
     constructor(notes, totalLabel, timestamp = Date.now()) {
 
@@ -56,7 +58,6 @@ class Report {
      * @param {any} name
      * @returns a new Section under name
      * 
-     * @memberOf Report
      */
     section(name) {
 
@@ -68,7 +69,6 @@ class Report {
      * 
      * @param {any} value
      * 
-     * @memberOf Report
      */
     setTotal(value) {
 
@@ -82,7 +82,6 @@ class Report {
      * @param {any} totalRef
      * @returns this
      * 
-     * @memberOf Report
      */
     calcPercentOf(path, totalRef) {
 
@@ -106,7 +105,6 @@ class Report {
      * 
      * @returns internal report
      * 
-     * @memberOf Report
      */
     toJSON() {
 
@@ -114,6 +112,9 @@ class Report {
     }
 }
 
+/**
+ * Class that represents a section of the main report
+ */
 class Section {
 
     /**
@@ -122,7 +123,6 @@ class Section {
      * @param {any} store
      * @param {any} reportTree
      * 
-     * @memberOf Section
      */
     constructor(store, reportTree) {
 
@@ -131,11 +131,10 @@ class Section {
     }
 
     /**
-     * 
-     * 
+     *  Returns the object that should be serialized
+     *  as a JSON representation of the report
      * @returns internal report
-     * 
-     * @memberOf Section
+     * @public 
      */
     toJSON(){
 
@@ -143,13 +142,11 @@ class Section {
     }
 
 
-    /** Legacy method from v1.0.0 Will be removed soon */
-    /**
-     * 
-     * 
+    /** 
+     * Legacy method from v1.0.0 Will be removed soon
+     * @deprecated Legacy method from v1.0.0 Will be removed soon
      * @returns new Section under name
      * 
-     * @memberOf Section
      */
     subSection(){
         return this.section(...arguments);
@@ -161,7 +158,6 @@ class Section {
      * @param {any} name
      * @returns new Section under name
      * 
-     * @memberOf Section
      */
     section(name) {
 
@@ -173,7 +169,6 @@ class Section {
      * 
      * @returns summary Section
      * 
-     * @memberOf Section
      */
     summary(){
 
@@ -187,7 +182,6 @@ class Section {
      * @param {any} totalRef
      * @returns this
      * 
-     * @memberOf Section
      */
     calcPercent( totalRef ){
 
@@ -209,7 +203,6 @@ class Section {
      * @param {any} value
      * @returns this
      * 
-     * @memberOf Section
      */
     set(path, value) {
 
@@ -227,7 +220,6 @@ class Section {
      * @param {number} [value=1]
      * @returns this
      * 
-     * @memberOf Section
      */
     increment(path, value = 1) {
 

@@ -8,19 +8,19 @@
     },
     "plugins": [ "plugins/markdown", "plugins/summarize" ],
     "templates": {
+        "path": "ink-docstrap",
         "outputSourceFiles": true,
         "systemName"            : "report-builder",
         "footer"                : "Report builder. by Danielo Rodríguez Rivero",
         "copyright"             : "Copyright © 2016 Danielo Rodríguez Rivero",
         "navType"               : "vertical",
-        "theme"                 : "united",
+        "theme"                 : "cerulean",
         "linenums"              : true,
         "collapseSymbols"       : false,
         "inverseNav"            : true,
         "highlightTutorialCode" : true
     },
     "opts": {
-      "template": "templates/docstrap/template",
       "encoding": "utf8",
       "private": true
     }

@@ -8,8 +8,16 @@
   "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "document":"jsdoc -d ./gh-pages -r ./src",
-    "publish-docs":"cd ./gh-pages && git add . && git commit -m \"Generated documentation\" && git push && echo Docs published"
+    "jsdoc":"jsdoc -d ./gh-pages -r ./src -c ./jsdoc/config.json",
+    "prepublish": "npm run build -s",
+    "deploy": "git pull --rebase origin master && git push origin master",
+    "patch": "npm version patch && npm publish",
+    "minor": "npm version minor && npm publish",
+    "major": "npm version major && npm publish",
+    "postpublish": "git push origin master --follow-tags",
+    "publish-docs":"cd ./gh-pages && git add . && git commit -m \"Generated documentation\" && git push && echo Docs published",
+    "toc": "doctoc --github --title \"# Changelog\" CHANGELOG.md"
+
   },
   "repository": {
     "type": "git",
