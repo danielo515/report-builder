@@ -11,7 +11,7 @@
 ### v1.1.0
 
 * Summary is now accesible from subsections
-* Deprecated subsection method for consistency, use section instead
+* Deprecated subsections
 
 ### v1.0.1
 

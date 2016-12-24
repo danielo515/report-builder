@@ -1,27 +1,6 @@
 'use strict';
 const Op = require('object-path');
-
-/**
- * Helper method that actually creates 
- * the target if it does not exist 
- * using the default value.
- * Object-path.get with default option 
- * does not sets the default value on the target path.
- * @module  utils
- * @private 
- * @param {Object} o The object containing the path
- * @param {String|Array} path a path to the target property inside the object
- * @param {any} def The default value to be used if the target does not exist. 
- *                  This value will be saved at the provided path inside the provided object
- * @return {any} The value at the provided path.
- */
-const getOrDefault = (o, path, def) => {
-
-    if (!Op.get(o, path)) {
-        Op.set(o, path, def);
-    }
-    return Op.get(o, path);
-};
+const getOrDefault = require('./utils');
 
 /**
  * Represents the report that we are generating
@@ -32,8 +11,8 @@ class Report {
     /**
      * Creates an instance of Report.
      * 
-     * @param {any} notes
-     * @param {any} totalLabel
+     * @param {string} notes
+     * @param {string} totalLabel
      * @param {any} [timestamp=Date.now()]
      * 
      */
@@ -55,7 +34,7 @@ class Report {
     /**
      * 
      * 
-     * @param {any} name
+     * @param {string} name
      * @returns a new Section under name
      * 
      */
@@ -78,8 +57,8 @@ class Report {
     /**
      * 
      * 
-     * @param {any} path
-     * @param {any} totalRef
+     * @param {string} path
+     * @param {string} totalRef
      * @returns this
      * 
      */
@@ -114,6 +93,7 @@ class Report {
 
 /**
  * Class that represents a section of the main report
+ * 
  */
 class Section {
 
@@ -155,7 +135,7 @@ class Section {
     /**
      * 
      * 
-     * @param {any} name
+     * @param {string} name
      * @returns new Section under name
      * 
      */
@@ -179,7 +159,7 @@ class Section {
     /**
      * 
      * 
-     * @param {any} totalRef
+     * @param {string} totalRef
      * @returns this
      * 
      */
@@ -199,7 +179,7 @@ class Section {
     /**
      * 
      * 
-     * @param {any} path
+     * @param {string} path
      * @param {any} value
      * @returns this
      * 
@@ -216,7 +196,7 @@ class Section {
     /**
      * 
      * 
-     * @param {any} path
+     * @param {string} path
      * @param {number} [value=1]
      * @returns this
      * 
