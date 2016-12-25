@@ -1,6 +1,7 @@
 {
   "extends": "devine",
   "rules": {
-   "quotes": ["error","single"]
+   "quotes": ["error","single"],
+   "babel/object-curly-spacing": "off"
   }
 }
