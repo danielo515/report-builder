@@ -1,0 +1,1 @@
+const reportBuilder = require(`../`);

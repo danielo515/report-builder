@@ -1,0 +1,81 @@
+{
+  "name": "report-builder",
+  "version": "1.0.0-beta.1",
+  "description": "muchos penes",
+  "main": "cjs/index.js",
+  "browser": "dist/reportBuilder.js",
+  "module": "es/index.js",
+  "jsxnext:main": "es/index.js",
+  "files": [
+    "dist",
+    "cjs",
+    "es",
+    "src"
+  ],
+  "watch": {
+    "lint:build": {
+      "patterns": "src",
+      "extensions": "js",
+      "quiet": true,
+      "inherit": true
+    }
+  },
+  "config": {
+    "ghooks": {
+      "pre-commit": "npm run lint:build:test",
+      "pre-push": "npm run lint:build:test"
+    }
+  },
+  "scripts": {
+
+    "prepublish": "npm run build",
+
+    "release": "release-it",
+
+    "lint": "npm run lint:eslint",
+    "lint:eslint": "eslint src/*.js",
+    
+    "lint:build": "npm run lint && npm run build:cjs -s",
+    "lint:build:test": "npm run lint:build && npm run test:coverage",
+
+    "test": "clear && jest",
+    "test:watch": "clear && jest --watch",
+    "test:coverage": "jest --coverage ",
+
+    "build": "clear && npm run lint:build:test && npm run build:es && npm run build:umd",
+
+    "build:watch": "clear && npm-watch",
+
+    "build:es": "rimraf es && cross-env BABEL_ENV=es babel src --out-dir es",
+    "build:cjs": "rimraf cjs && cross-env BABEL_ENV=cjs babel src --out-dir cjs",
+    "build:umd": "rimraf dist && cross-env BABEL_ENV=es rollup -c & cross-env BABEL_ENV=es NODE_ENV=production rollup -c"
+
+  },
+  "keywords": [],
+  "author": "Danielo Rodríguez Rivero (rdanielo@gmail.com)",
+  "license": "MIT",
+  "repository": "danielo515/report-builder",
+  "devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-core": "^6.17.0",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    
+    "babel-preset-es2015": "^6.16.0",
+    "cross-env": "^3.1.3",
+    "eslint": "^3.7.1",
+    "eslint-config-devine": "^1.5.0",
+    "eslint-plugin-babel": "^3.3.0",
+    
+    "jest": "^16.0.1",
+    "rimraf": "^2.5.4",
+    "release-it": "^2.5.1",
+    "npm-watch": "^0.1.6",
+    "ghooks": "^1.3.2",
+    "rollup": "^0.36.1",
+    "rollup-plugin-babel": "^2.6.1",
+    "rollup-plugin-node-resolve": "^2.0.0",
+    "rollup-plugin-bundle-size": "^1.0.1",
+    "rollup-plugin-commonjs": "^5.0.5",
+    "rollup-plugin-uglify": "^1.0.1"
+  }
+}
