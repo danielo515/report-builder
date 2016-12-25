@@ -1,4 +1,4 @@
-const Report = require('../src');
+const Report = require('../dist/reportBuilder');
 
 const report = new Report('Super report', 'counting api calls');
 
