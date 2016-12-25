@@ -53,6 +53,7 @@ class Report {
   setTotal(value) {
 
     this.report.summary.total.count = value;
+    return this;
   }
 
   /**
@@ -221,3 +222,4 @@ class Section {
 }
 
 module.exports = Report;
+module.exports.Section = Section;
