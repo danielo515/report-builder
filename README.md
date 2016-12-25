@@ -8,6 +8,8 @@ It provides a nice developer experience providing simple but powerful chainable 
 [![NPM](https://img.shields.io/npm/v/report-builder.svg?style=flat-square)](https://www.npmjs.com/package/report-builder)
 [![David](https://img.shields.io/david/danielo515/report-builder.svg?style=flat-square)](https://david-dm.org/danielo515/report-builder)
 [![Travis](https://img.shields.io/travis/danielo515/report-builder/master.svg?style=flat-square)](https://travis-ci.org/danielo515/report-builder)
+[![Coverage Status](https://coveralls.io/repos/danielo515/report-builder/badge.svg?branch=master)](https://coveralls.io/r/danielo515/report-builder?branch=master)
+
 
 ### Installation
 
