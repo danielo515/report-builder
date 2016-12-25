@@ -38,7 +38,7 @@ import reportBuilder from 'report-builder';
 
 # Examples
 
-See [`example`](example/script.js) folder or the [runkit](https://runkit.com/danielo515/report-builder) example.
+See [`example`](examples/script.js) folder or the [runkit](https://runkit.com/danielo515/report-builder) example.
 
 
 ### Basic usage example
