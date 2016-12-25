@@ -1,6 +1,6 @@
 {
   "name": "report-builder",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Complex JSON reports made easy",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
@@ -32,25 +32,20 @@
   "scripts": {
     "prepublish": "npm run build",
     "postpublish": "git push origin master --follow-tags",
-
     "minor": "npm version minor && npm publish",
-
     "release": "release-it",
     "lint": "npm run lint:eslint",
     "lint:eslint": "eslint src/*.js",
     "lint:build": "npm run lint && npm run build:cjs -s",
     "lint:build:test": "npm run lint:build && npm run test:coverage",
-
     "test": "clear && jest",
     "test:watch": "clear && jest --watch",
     "test:coverage": "jest --coverage ",
-
     "build": "clear && npm run lint:build:test && npm run build:es && npm run build:umd",
     "build:watch": "clear && npm-watch",
     "build:es": "rimraf es && cross-env BABEL_ENV=es babel src --out-dir es",
     "build:cjs": "rimraf cjs && cross-env BABEL_ENV=cjs babel src --out-dir cjs",
     "build:umd": "rimraf dist && cross-env BABEL_ENV=es rollup -c & cross-env BABEL_ENV=es NODE_ENV=production rollup -c",
-
     "jsdoc": "rimraf gh-pages/* && jsdoc -d ./gh-pages -r ./src -c ./jsdoc/config.json",
     "publish-docs": "cd ./gh-pages && git add . && git commit -m \"Generated documentation\" && git push && echo Docs published"
   },
@@ -70,7 +65,7 @@
     "url": "git+ssh://git@github.com/danielo515/report-builder.git"
   },
   "dependencies": {
-    "object-path":"^0.11.3"
+    "object-path": "^0.11.3"
   },
   "devDependencies": {
     "babel-cli": "^6.18.0",
