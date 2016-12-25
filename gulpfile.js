@@ -4,7 +4,7 @@ var jsdoc = require('gulp-jsdoc3');
 
 // build paths where we output our results
 var outPath = {
-  docs: "./gh-pages/"
+  docs: "./docs/"
 };
 
 // adapt this to your source code location
