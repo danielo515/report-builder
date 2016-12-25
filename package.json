@@ -33,6 +33,8 @@
     "prepublish": "npm run build",
     "postpublish": "git push origin master --follow-tags",
 
+    "minor": "npm version minor && npm publish",
+
     "release": "release-it",
     "lint": "npm run lint:eslint",
     "lint:eslint": "eslint src/*.js",

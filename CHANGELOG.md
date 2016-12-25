@@ -8,6 +8,11 @@
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
+### v1.2.0
+
+* Added compatibily with older versions of node using BABEL
+  * Up to v4
+
 ### v1.1.0
 
 * Summary is now accesible from subsections
