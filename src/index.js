@@ -1,27 +1,7 @@
 'use strict';
-const Op = require(`object-path`);
 
-/**
- * Helper method that actually creates
- * the target if it does not exist
- * using the default value.
- * Object-path.get with default option
- * does not sets the default value on the target path.
- * @module  utils
- * @private
- * @param {Object} o The object containing the path
- * @param {String|Array} path a path to the target property inside the object
- * @param {any} def The default value to be used if the target does not exist.
- *                  This value will be saved at the provided path inside the provided object
- * @return {any} The value at the provided path.
- */
-const getOrDefault = (o, path, def) => {
-
-  if (!Op.get(o, path)) {
-    Op.set(o, path, def);
-  }
-  return Op.get(o, path);
-};
+const Op = require('object-path');
+const getOrDefault = require('./utils');
 
 /**
  * Represents the report that we are generating
@@ -32,8 +12,8 @@ class Report {
   /**
    * Creates an instance of Report.
    *
-   * @param {any} notes
-   * @param {any} totalLabel
+   * @param {string} notes
+   * @param {string} totalLabel
    * @param {any} [timestamp=Date.now()]
    *
    */
@@ -55,8 +35,8 @@ class Report {
   /**
    *
    *
-   * @param {any} name
-   * @returns a new Section under name
+   * @param {string} name
+   * @returns a new {@link Section} under that name
    *
    */
   section(name) {
@@ -78,22 +58,22 @@ class Report {
   /**
    *
    *
-   * @param {any} path
-   * @param {any} totalRef
+   * @param {string} path
+   * @param {string} totalRef
    * @returns this
    *
    */
   calcPercentOf(path, totalRef) {
 
-    if (typeof totalRef !== `string`) {
-      totalRef = `summary.total.count`; // default reference is inside summary
+    if (typeof totalRef !== 'string') {
+      totalRef = 'summary.total.count'; // default reference is inside summary
     } else {
-      totalRef = [`results`, totalRef, `count`].join(`.`); // any other ref is under results namespace
+      totalRef = ['results', totalRef, 'count'].join('.'); // any other ref is under results namespace
     }
-    if (typeof path !== `string` || !Op.get(this.report.results, path) || isNaN(Op.get(this.report, totalRef))) {
+    if (typeof path !== 'string' || !Op.get(this.report.results, path) || isNaN(Op.get(this.report, totalRef))) {
       return this;
     }
-    const count = Op.get(this.report, [`results`, path, `count`].join(`.`));
+    const count = Op.get(this.report, ['results', path, 'count'].join('.'));
     const total = Op.get(this.report, totalRef);
     const percent = (count * 100) / total;
     Op.set(this.report.results, `${path}.percent`, percent);
@@ -113,12 +93,14 @@ class Report {
 }
 
 /**
- * Class that represents a section of the main report
+ * Class that represents a section of the main report.
+ * **You should not try to instantiate it directly**.
  */
 class Section {
 
   /**
    * Creates an instance of Section.
+   * This constructor should only be called by the {@link Report} class
    *
    * @param {any} store
    * @param {any} reportTree
@@ -155,7 +137,7 @@ class Section {
   /**
    *
    *
-   * @param {any} name
+   * @param {string} name
    * @returns new Section under name
    *
    */
@@ -179,17 +161,17 @@ class Section {
   /**
    *
    *
-   * @param {any} totalRef
+   * @param {string} totalRef
    * @returns this
    *
    */
   calcPercent(totalRef) {
 
-    if (typeof this.store.count !== `number`) {
+    if (typeof this.store.count !== 'number') {
       return this;
     }
     const count = this.store.count;
-    const total = typeof totalRef !== `string`
+    const total = typeof totalRef !== 'string'
       ? this.tree.summary.total.count
       : Op.get(this.tree, totalRef);
     this.store.percent = (count * 100) / total;
@@ -199,7 +181,7 @@ class Section {
   /**
    *
    *
-   * @param {any} path
+   * @param {string} path
    * @param {any} value
    * @returns this
    *
@@ -216,21 +198,21 @@ class Section {
   /**
    *
    *
-   * @param {any} path
+   * @param {string} path
    * @param {number} [value=1]
    * @returns this
    *
    */
   increment(path, value = 1) {
 
-    if (typeof path === `number`) {
+    if (typeof path === 'number') {
       value = path;
-      path = `count`;
+      path = 'count';
     } else {
-      path = (typeof path === `string`)
-        ? path.split(`.`)
+      path = (typeof path === 'string')
+        ? path.split('.')
         : [];
-      path.push(`count`);
+      path.push('count');
     }
     const currVal = Op.get(this.store, path, 0);
     Op.set(this.store, path, currVal + value);
