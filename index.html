@@ -88,24 +88,21 @@
     <section class="readme-section">
         <article><h1>Report Builder</h1><p>A simple tool for helping your programs generate complex JSON documents.
 It provides a nice developer experience providing simple but powerful chainable methods.</p>
-<h1>Report structure</h1><p>A report in it's simpler has a summary and a results sections. 
-Check the format below:</p>
-<pre class="prettyprint source lang-js"><code>{
-    summary: {
-        total: {
-            count: 0,
-            label: &quot;What does the total mean, what we are counting&quot;
-        },
-        timestamp: 1482604172152,
-        notes: &quot;Why we are generating a report&quot;
-    },
-
-    results: { /* This section is empty when the report is first created*/
-        APICalls: {
-            count: 10
-        }
-     }
-}</code></pre><h1>Basic usage example</h1><p>You have to require the report constructor, then you instantiate a report, and then you can start using it:</p>
+<blockquote>
+<p>Create complex JSON reports easily</p>
+</blockquote>
+<p><a href="https://www.npmjs.com/package/report-builder"><img src="https://img.shields.io/npm/v/report-builder.svg?style=flat-square" alt="NPM"></a>
+<a href="https://david-dm.org/danielo515/report-builder"><img src="https://img.shields.io/david/danielo515/report-builder.svg?style=flat-square" alt="David"></a>
+<a href="https://travis-ci.org/danielo515/report-builder"><img src="https://img.shields.io/travis/danielo515/report-builder/master.svg?style=flat-square" alt="Travis"></a>
+<a href="https://coveralls.io/r/danielo515/report-builder?branch=master"><img src="https://coveralls.io/repos/danielo515/report-builder/badge.svg?branch=master" alt="Coverage Status"></a></p>
+<h3>Installation</h3><p>Install via <a href="https://github.com/yarnpkg/yarn">yarn</a></p>
+<pre class="prettyprint source"><code>yarn add report-builder (--dev)</code></pre><p>or npm</p>
+<pre class="prettyprint source"><code>npm install report-builder (--save-dev)</code></pre><p>If you don't use a package manager, you can <a href="https://unpkg.com/report-builder/">access <code>report-builder</code> via unpkg (CDN)</a>, download the source, or point your package manager to the url.</p>
+<p><code>report-builder</code> is compiled as a collection of <a href="http://webpack.github.io/docs/commonjs.html">CommonJS</a> modules &amp; <a href="http://www.2ality.com/2014/09/es6-modules-final.html">ES2015 modules</a> for bundlers that support the <code>jsnext:main</code> or <code>module</code> field in package.json (Rollup, Webpack 2)</p>
+<p>The <code>report-builder</code> package includes precompiled production and development <a href="https://github.com/umdjs/umd">UMD</a> builds in the <a href="https://unpkg.com/report-builder/dist/"><code>dist</code> folder</a>. They can be used directly without a bundler and are thus compatible with many popular JavaScript module loaders and environments. You can drop a UMD build as a <a href="https://unpkg.com/report-builder"><code>&lt;script&gt;</code> tag</a> on your page. The UMD builds make <code>report-builder</code> available as a <code>window.reportBuilder</code> global variable.</p>
+<h3>Usage</h3><h3>setup</h3><pre class="prettyprint source lang-js"><code>
+import reportBuilder from 'report-builder';</code></pre><h1>Examples</h1><p>See <a href="examples/script.js"><code>example</code></a> folder or the <a href="https://runkit.com/danielo515/report-builder">runkit</a> example.</p>
+<h3>Basic usage example</h3><p>You have to require the report constructor, then you instantiate a report, and then you can start using it:</p>
 <pre class="prettyprint source lang-js"><code>const Report = require('report-builder');
 const report = new Report('Super report','counting api calls');
 
@@ -130,14 +127,34 @@ using <code>JSON.stringify</code>. Let's output it to the console:</p>
   &quot;results&quot;: {
     &quot;APICalls&quot;: {
       &quot;count&quot;: 10,
-      &quot;Failed&quot;: {
         &quot;count&quot;: 10
+      &quot;Failed&quot;: {
       }
     }
   }
 }
-*/</code></pre><h1>API</h1><p>For a more complete description of the api please check the <a href="danielo515.github.io/report-builder">documentation</a></p>
-<h1>Disclaimer</h1><p>This is a work in progress, and may be a bit oppinionated. It was build to suit my needs, so it makes sense.</p></article>
+*/</code></pre><h2>Report structure</h2><p>A report in it's simpler has a summary and a results sections.
+Check the format below:</p>
+<pre class="prettyprint source lang-js"><code>{
+    summary: {
+        total: {
+            count: 0,
+            label: &quot;What does the total mean, what we are counting&quot;
+        },
+        timestamp: 1482604172152,
+        notes: &quot;Why we are generating a report&quot;
+    },
+
+    results: { /* This section is empty when the report is first created*/
+        APICalls: {
+            count: 10
+        }
+     }
+}</code></pre><h1>License</h1><p>The code is available under the <a href="LICENSE">MIT</a> license.</p>
+<h1>Contributing</h1><p>We are open to contributions, see <a href="CONTRIBUTING.md">CONTRIBUTING.md</a> for more info.</p>
+<h1>API</h1><p>For a more complete description of the api please check the <a href="https://danielo515.github.io/report-builder">documentation</a></p>
+<h1>Misc</h1><p>This module was created using <a href="https://github.com/duivvv/generator-module-boilerplate">generator-module-boilerplate</a>.</p>
+<h3>Disclaimer</h3><p>This is a work in progress, and may be a bit oppinionated. It was build to suit my needs, so it makes sense.</p></article>
     </section>
 
 
@@ -189,7 +206,7 @@ using <code>JSON.stringify</code>. Let's output it to the console:</p>
 <span class="jsdoc-message">
 	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a>
 	
-		on 2016-12-24T20:06:41+01:00
+		on 2016-12-25T12:09:13+01:00
 	
 	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
 </span>
