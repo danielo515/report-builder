@@ -1,5 +1,7 @@
 # Report Builder
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/danielo515/report-builder.svg)](https://greenkeeper.io/)
+
 A simple tool for helping your programs generate complex JSON documents.
 It provides a nice developer experience providing simple but powerful chainable methods.
 
