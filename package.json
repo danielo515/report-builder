@@ -88,7 +88,7 @@
     "gulp-jsdoc3": "^1.0.1",
     "jest": "^21.1.0",
     "npm-watch": "^0.2.0",
-    "release-it": "^3.1.0",
+    "release-it": "^4.1.0",
     "rimraf": "^2.5.4",
     "rollup": "^0.50.0",
     "rollup-plugin-babel": "^3.0.2",
